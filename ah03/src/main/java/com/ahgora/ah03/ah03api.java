@@ -2,9 +2,9 @@ package com.ahgora.ah03;
 
 import java.util.HashMap;
 
-public class ah03api {
+public class Api {
 
-    public static HashMap<String, String> cadastro_funcionario(String matricula, String codEmpresa) {
+    public static HashMap<String, String> cadastroFuncionario(String matricula, String codEmpresa) {
 
         final String mat = matricula;
 
