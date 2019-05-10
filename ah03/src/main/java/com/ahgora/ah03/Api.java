@@ -30,4 +30,42 @@ public class Api {
 
         return responseSuccess;
     }
+
+    public static HashMap<String, String> batidaFuncionario() {
+
+        HashMap<String, String> responseError = new HashMap<String, String>() {
+            {
+                put("error", "true");
+                put("matricula", null);
+                put("res", "Digital não reconhecida");
+            }
+        };
+
+        HashMap<String, String> responseSuccess = new HashMap<String, String>() {
+            {
+                put("error", "false");
+                put("matricula", "matricula");
+                put("res", "Olá! Sua batida foi realizada com sucesso.");
+            }
+        };
+
+        return responseSuccess;
+    }
+
+    public static HashMap<String, String> cargaDados() {
+
+        HashMap<String, String> responseError = new HashMap<String, String>() {
+            {
+                put("error", "true");
+            }
+        };
+
+        HashMap<String, String> responseSuccess = new HashMap<String, String>() {
+            {
+                put("error", "false");
+            }
+        };
+
+        return responseSuccess;
+    }
 }
