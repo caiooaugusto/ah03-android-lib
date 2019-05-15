@@ -16,10 +16,13 @@ dependencies {
     implementation 'com.github.caiooaugusto:ah03-android-lib:0.0.7'
 }
 ```
-1. Functions
+
+1. API Functions
 
 1.1 cadastroFuncionario
+
 params: String matricula
+
 error:
 ```
 {
@@ -36,8 +39,10 @@ sucess:
 }
 ``` 
 
-1.2 batidaFuncionario 
+1.2 batidaFuncionario
+
 params: none
+
 error:
 ```
 {
@@ -53,7 +58,9 @@ sucess:
 ```
 
 1.3 configura 
+
 params: String id, String bio
+
 error:
 ```
 {
