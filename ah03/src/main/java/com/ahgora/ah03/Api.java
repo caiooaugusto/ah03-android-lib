@@ -1,71 +1,63 @@
 package com.ahgora.ah03;
 
-import java.util.HashMap;
+import com.google.gson.Gson;
+import java.util.Random;
 
 public class Api {
 
-    public static HashMap<String, String> cadastroFuncionario(String matricula, String codEmpresa) {
+    public static String cadastroFuncionario(String matricula) {
+        final Random random = new Random();
+        final Gson gsonResponse = new Gson();
 
-        final String mat = matricula;
+        Response responseError = new Response();
+        responseError.setError(true);
+        responseError.setMatricula(matricula);
 
-        HashMap<String, String> responseError = new HashMap<String, String>() {
-            {
-                put("error", "true");
-                put("matricula", mat);
-                put("res", "Ops! Sua digital não ficou muito boa.");
-            }
-        };
+        Response responseSuccess = new Response();
+        responseSuccess.setError(false);
+        responseSuccess.setMatricula(matricula);
+        responseSuccess.setBio("hash da biometria capturada");
 
-        HashMap<String, String> responseSuccess = new HashMap<String, String>() {
-            {
-                put("error", "false");
-                put("matricula", mat);
-                put("res", "Cadastro realizado com sucesso!");
-            }
-        };
-
-        if (matricula == null || codEmpresa == null) {
-            return responseError;
+        if (random.nextBoolean()) {
+            return gsonResponse.toJson(responseSuccess);
+        } else {
+            return gsonResponse.toJson(responseError);
         }
-
-        return responseSuccess;
     }
 
-    public static HashMap<String, String> batidaFuncionario() {
+    public static String batidaFuncionario() {
+        final Random random = new Random();
+        final Gson gsonResponse = new Gson();
 
-        HashMap<String, String> responseError = new HashMap<String, String>() {
-            {
-                put("error", "true");
-                put("matricula", null);
-                put("res", "Digital não reconhecida");
-            }
-        };
+        Response responseError = new Response();
+        responseError.setError(true);
+        responseError.setMatricula("");
 
-        HashMap<String, String> responseSuccess = new HashMap<String, String>() {
-            {
-                put("error", "false");
-                put("matricula", "matricula");
-                put("res", "Olá! Sua batida foi realizada com sucesso.");
-            }
-        };
+        Response responseSuccess = new Response();
+        responseSuccess.setError(false);
+        responseSuccess.setMatricula("0101010101");
 
-        return responseSuccess;
+        if (random.nextBoolean()) {
+            return gsonResponse.toJson(responseSuccess);
+        } else {
+            return gsonResponse.toJson(responseError);
+        }
     }
 
-    public static HashMap<String, String> cargaDados() {
+    public static String configura(String id, String bio) {
+        final Random random = new Random();
+        final Gson gsonResponse = new Gson();
 
-        HashMap<String, String> responseError = new HashMap<String, String>() {
-            {
-                put("error", "true");
-            }
-        };
+        Response responseError = new Response();
+        responseError.setError(true);
 
-        HashMap<String, String> responseSuccess = new HashMap<String, String>() {
-            {
-                put("error", "false");
-            }
-        };
+        Response responseSuccess = new Response();
+        responseSuccess.setError(false);
 
-        return responseSuccess;
+        if (random.nextBoolean()) {
+            return gsonResponse.toJson(responseSuccess);
+        } else {
+            return gsonResponse.toJson(responseError);
+        }
     }
 }
