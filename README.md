@@ -1,7 +1,5 @@
 # Ah03 Android Lib
 
-ah03 android library
-
 Usage in android projects:
 
 ```
@@ -16,8 +14,8 @@ dependencies {
     implementation 'com.github.caiooaugusto:ah03-android-lib:0.0.7'
 }
 ```
-
-1. API Functions
+--------------------------------------------------
+API Functions
 
 1.1 cadastroFuncionario
 
