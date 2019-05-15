@@ -22,7 +22,7 @@ public class Response {
     }
 
     public String getBio() {
-        return matricula;
+        return bio;
     }
 
     public void setBio(String newBio) {
